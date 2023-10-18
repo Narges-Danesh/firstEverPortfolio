@@ -1,0 +1,514 @@
+:root {
+  --bg-color: #19232b;
+  --bg-color-2: #040913;
+  --bg-color-3: #0f161c;
+  --main-color: #51f7c4;
+  --text-color: #e2fcfa;
+}
+@font-face {
+  font-family: iransans;
+  src: url(iranSans.ttf);
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: iransans;
+  outline: none;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+i,
+button {
+  cursor: pointer;
+  color: var(--text-color);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+#up {
+  position: fixed;
+  z-index: 1000;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  box-shadow: 0 0 12px black;
+  color: #1a2722;
+}
+/* ====================== CONTAINER ======================= */
+#container {
+  width: 100vw;
+  background-color: black;
+  position: relative;
+}
+main {
+  position: relative;
+  background-color: var(--bg-color-3);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 500;
+}
+main > div {
+  padding: 0 150px;
+}
+/* ====================== NAVBAR ======================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+#nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+  padding: 20px 50px;
+  background-color: transparent;
+}
+#nav-list .nav-item {
+  position: relative;
+}
+#nav-list .nav-item a {
+  padding: 10px;
+}
+.nav-item.active {
+  color: var(--main-color);
+}
+.nav-item::after {
+  content: "";
+  width: 0;
+  transition: all 0.3s;
+}
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  height: 2px;
+  width: 40%;
+  background-color: var(--main-color);
+}
+/* ====================== HEADER ======================= */
+#hero-section {
+  height: 80vh;
+  position: fixed;
+  top: 10px;
+  right: 0;
+  width: 100vw;
+  line-height: 2;
+}
+#header {
+  width: 100vw;
+  height: 110%;
+  margin-top: -15px;
+  background-image: url(images/bg.jpeg),
+    linear-gradient(-90deg, black, transparent);
+  background-blend-mode: overlay;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+}
+#baby-yoda {
+  animation: upAndDown 0.7s infinite alternate linear;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+#baby-yoda img {
+  margin-top: -17%;
+  margin-left: 10%;
+  width: 60%;
+  height: 150%;
+}
+@keyframes upAndDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2%);
+  }
+}
+#intro {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-right: 10%;
+  width: 35%;
+}
+#intro-name {
+  margin-bottom: 10px;
+  text-wrap: nowrap;
+}
+#intro-name span {
+  color: var(--main-color);
+}
+#intro-job-title {
+  margin: 10px 0;
+  background-color: var(--main-color);
+  padding: 5px 20px;
+  color: #1a2722;
+  width: max-content;
+  border-radius: 3px;
+}
+/* ====================== SKILLS ======================= */
+#skills {
+  padding-top: 30px;
+}
+.section-title {
+  font-size: 1.3rem;
+}
+#skills-tab-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.skill-tab {
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+#skills-tab-buttons button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  padding: 10px 45px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 3px solid transparent;
+}
+#skills-tab-buttons button:hover {
+  border-bottom: 3px solid var(--main-color);
+}
+#skills-tab-buttons button.active {
+  border-bottom: 3px solid var(--main-color);
+  background-color: var(--bg-color-2);
+}
+.skill {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.skill-logo img {
+  width: 100px;
+}
+.progress {
+  position: relative;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+}
+.progress::before {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  background-color: var(--bg-color-3);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.6);
+}
+.progress .progress-value {
+  font-weight: 700;
+}
+.progress .progress-value .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: end;
+  gap: 3px;
+}
+.progress .progress-value .percentage span {
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
+.skill-name {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* ====================== PROJECTS ======================= */
+#projects {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-top: 80px;
+  background-color: var(--bg-color);
+}
+#projects-header-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+#projects > div:not(:first-child) {
+  display: flex;
+  padding: 10px;
+  margin-bottom: 120px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#projects .project-desc {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  transform: translateX(60%);
+  transition: all 0.8s;
+}
+#projects .project > a {
+  transform: translateX(-60%);
+  transition: all 0.8s;
+}
+#projects .project-desc a {
+  padding: 7px 40px;
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  color: #1a2722;
+  transition: all 0.4s;
+}
+#projects .project-desc a:hover {
+  background-color: transparent;
+  color: var(--main-color);
+}
+#projects .project-desc .createdWith {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100px;
+}
+#projects .project-desc .tool-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 40px;
+}
+#projects .project-desc .tool-wrapper span {
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: all 0.3s;
+}
+#projects .project-desc .tool-wrapper:hover img {
+  margin-bottom: 10px;
+}
+#projects .project-desc .tool-wrapper:hover span {
+  opacity: 1;
+}
+#projects .project-desc .createdWith img {
+  width: 40px;
+  transition: all 0.3s;
+}
+#projects .project-pics {
+  display: flex;
+  position: relative;
+  flex: 1;
+}
+#projects .project-pics img {
+  height: 250px;
+  border-radius: 12px;
+  border: 3px solid white;
+  transition: all 0.3s;
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.6);
+}
+#projects .project-pics img:hover {
+  border-color: var(--bg-color);
+}
+.desktop-pic {
+  width: 100%;
+}
+#projects .project-pics .mobile-pic img {
+  width: 160px;
+  position: absolute;
+  top: 30%;
+  left: -10%;
+}
+/* ====================== CONTACT ME ======================= */
+#contact-me {
+  background-color: var(--bg-color-3);
+  padding-bottom: 50px;
+}
+#contact-me-form {
+  width: 70%;
+  margin: 0 auto;
+}
+#form-header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#form-header h1 {
+  font-size: 1.5rem;
+  background-color: var(--bg-color-3);
+  z-index: 200;
+  padding: 0 15px;
+  border-left: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+}
+#form-header span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 4px;
+  border-radius: 6px;
+  background-color: var(--main-color);
+}
+#contact-me-form {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+#contact-me-form .input-container {
+  position: relative;
+}
+#contact-me-form .input-container > *:first-child {
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 100%;
+}
+#contact-me-form #contact-me-userinput {
+  resize: none;
+  height: 200px;
+}
+#contact-me-form #contact-me-submit {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: #19232b;
+  font-weight: 900;
+  border: 1px solid var(--main-color);
+  transition: all 0.3s;
+  border-radius: 3px;
+  padding: 10px;
+}
+#contact-me-form #contact-me-submit:hover {
+  background-color: transparent;
+  color: white;
+}
+.asterisk {
+  color: rgb(245, 27, 27);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-size: 1.2rem;
+}
+#contact-me-form small {
+  color: white;
+}
+#contact-me-form .input-container .error {
+  border: 1px solid red;
+}
+#contact-me-form .input-container .success {
+  border: 1px solid green;
+}
+/* ====================== MEDIA QUERIES ======================= */
+@media screen and (max-width: 1100px) {
+  #baby-yoda img {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 950px) {
+  #baby-yoda img {
+    width: 100%;
+    height: 130%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .project {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .project-desc a {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 750px) {
+  main > div {
+    padding: 0 20px;
+  }
+  #intro {
+    text-align: center;
+    z-index: 1000;
+  }
+  #intro-name {
+    text-shadow: 0 0 5px #000;
+  }
+}
+@media screen and (max-width: 650px) {
+  #baby-yoda {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 80%;
+  }
+
+  .project-pics {
+    width: 90%;
+  }
+  #projects .project-pics img {
+    width: 100%;
+    height: 200px;
+  }
+  #contact-me-form {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .project-pics {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 440px) {
+  html {
+    font-size: 12px;
+  }
+  #nav-list {
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+  #header {
+    height: 90vh;
+  }
+  #projects .project-pics img {
+    width: 100%;
+    height: 150px;
+  }
+  #projects .project-pics .mobile-pic img {
+    width: 100px;
+  }
+  #projects > div:not(:first-child) {
+    margin-bottom: 40px;
+  }
+}
