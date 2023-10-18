@@ -152,7 +152,8 @@ nav {
 }
 #intro-name {
   margin-bottom: 10px;
-  text-wrap: nowrap;
+  text-align: right;
+  width: 300px;
 }
 #intro-name span {
   color: var(--main-color);
@@ -432,6 +433,13 @@ nav {
 #contact-me-form .input-container .success {
   border: 1px solid green;
 }
+#submit-message {
+  text-align: center;
+  background-color: rgb(245, 160, 174);
+  padding: 10px;
+  color: #222;
+  display: none;
+}
 /* ====================== MEDIA QUERIES ======================= */
 @media screen and (max-width: 1100px) {
   #baby-yoda img {
@@ -473,7 +481,6 @@ nav {
     left: 0;
     width: 80%;
   }
-
   .project-pics {
     width: 90%;
   }
@@ -484,6 +491,13 @@ nav {
   #contact-me-form {
     width: 85%;
   }
+  #projects .project-desc {
+  transform: translateX(0);
+
+  }
+#projects .project > a {
+  transform: translateX(0);
+}
 }
 @media screen and (max-width: 550px) {
   .project-pics {
@@ -498,8 +512,8 @@ nav {
     padding: 10px 0;
     margin: 0 auto;
   }
-  #header {
-    height: 90vh;
+  #hero-section {
+    height: 60vh;
   }
   #projects .project-pics img {
     width: 100%;

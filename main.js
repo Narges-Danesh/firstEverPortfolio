@@ -130,7 +130,7 @@ const skillsRect = skills.getBoundingClientRect();
 window.addEventListener("scroll", () => {
   // start counting frontend skills percentages on scroll - once
   if (
-    window.scrollY > skillsRect.top + skillsSection.offsetHeight - 200 &&
+    window.scrollY > skillsRect.top &&
     scrolled === false
   ) {
     scrolled = true;
@@ -220,15 +220,22 @@ aTags.forEach((tag) => {
   tag.target = "_blank";
 });
 
-// ===================== CONTACT ME FORM =========================
+// ===================== CONTACT FORM =========================
 const contactForm = document.getElementById("contact-me-form");
 const username = document.getElementById("contact-me-username");
 const useremail = document.getElementById("contact-me-email");
 const userinput = document.getElementById("contact-me-userinput");
-
+const submitMessage = document.getElementById('submit-message')
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
   checkInputs();
+  let errors = document.querySelectorAll('.error')
+  if(errors.length === 0) {
+    console.log('submitted')
+    submitMessage.style.display = 'block'
+  } else {
+    submitMessage.style.display = 'none'
+  }
 });
 function checkInputs() {
   const usernameValue = username.value.trim();
