@@ -129,10 +129,7 @@ const skillsRect = skills.getBoundingClientRect();
 
 window.addEventListener("scroll", () => {
   // start counting frontend skills percentages on scroll - once
-  if (
-    window.scrollY > skillsRect.top &&
-    scrolled === false
-  ) {
+  if (window.scrollY > skillsRect.top && scrolled === false) {
     scrolled = true;
     frontEndSkills();
   }
@@ -225,18 +222,32 @@ const contactForm = document.getElementById("contact-me-form");
 const username = document.getElementById("contact-me-username");
 const useremail = document.getElementById("contact-me-email");
 const userinput = document.getElementById("contact-me-userinput");
-const submitMessage = document.getElementById('submit-message')
+const submitMessage = document.getElementById("submit-message");
+const inputContainers = document.querySelectorAll(".input-container");
+
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
   checkInputs();
-  let errors = document.querySelectorAll('.error')
-  if(errors.length === 0) {
-    console.log('submitted')
-    submitMessage.style.display = 'block'
+  let errors = document.querySelectorAll(".error");
+  if (errors.length === 0) {
+    submitMessage.style.display = "block";
+    const inputs = contactForm.querySelectorAll("input:not(:last-child)");
+    inputs.forEach((el) => {
+      el.style.border = "none";
+    });
+    userinput.style.border = "none";
+    contactForm.submit();
   } else {
-    submitMessage.style.display = 'none'
+    submitMessage.style.display = "none";
   }
 });
+
+inputContainers.forEach((container) => {
+  if (container == inputContainers[2]) return;
+  const small = document.createElement("small");
+  container.appendChild(small);
+});
+
 function checkInputs() {
   const usernameValue = username.value.trim();
   const emailValue = useremail.value.trim();
@@ -251,10 +262,10 @@ function checkInputs() {
     setErrorFor(useremail, "لطفاً ایمیل خود را وارد کنید");
   } else if (!validateEmail(emailValue)) {
     setErrorFor(useremail, "ایمیل باید با فرمت صحیح وارد شود");
-  } else  {
+  } else {
     setSuccessFor(useremail);
   }
-  if(inputValue === '') {
+  if (inputValue === "") {
     setErrorFor(userinput, "لطفاً پیشنهاد خود را بنویسید");
   } else {
     setSuccessFor(userinput);
@@ -262,7 +273,7 @@ function checkInputs() {
 }
 function setErrorFor(input, message) {
   const inputParent = input.parentElement;
-  const small = inputParent.querySelector("small");
+  small = inputParent.querySelector("small");
   small.innerText = message;
   input.className = "error";
   return;
@@ -278,3 +289,5 @@ function validateEmail(email) {
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   return re.test(email);
 }
+
+// ===================== SEND EMAIL =========================

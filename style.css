@@ -390,13 +390,18 @@ nav {
 #contact-me-form .input-container {
   position: relative;
 }
-#contact-me-form .input-container > *:first-child {
+#contact-me-form .input-container > *:nth-child(2) {
   border: none;
   padding: 10px;
   border-radius: 3px;
   background-color: var(--bg-color);
   color: var(--text-color);
   width: 100%;
+}
+#contact-me-form .input-container label {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #ddd;
 }
 #contact-me-form #contact-me-userinput {
   resize: none;
@@ -425,7 +430,7 @@ nav {
   font-size: 1.2rem;
 }
 #contact-me-form small {
-  color: white;
+  color: rgb(255, 145, 145);
 }
 #contact-me-form .input-container .error {
   border: 1px solid red;
@@ -435,10 +440,49 @@ nav {
 }
 #submit-message {
   text-align: center;
-  background-color: rgb(245, 160, 174);
+  background-color: rgb(255, 186, 198);
   padding: 10px;
   color: #222;
+  border-radius: 3px;
+  font-size: 0.9rem;
   display: none;
+}
+/* ======================  THANK YOU MESSAGE ======================= */
+.thank-you-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: var(--bg-color);
+  width: 35%;
+  height: 35%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  padding: 50px 0;
+}
+.card h1 {
+  font-size: 1.5rem;
+}
+.card a {
+  padding: 8px 20px;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  color: #19232b;
+  border: 1px solid var(--main-color);
+  transition: all 0.3s;
+}
+.card a:hover {
+  border: 1px solid var(--main-color);
+  color: white;
+  background-color: transparent;
 }
 /* ====================== MEDIA QUERIES ======================= */
 @media screen and (max-width: 1100px) {
@@ -492,12 +536,11 @@ nav {
     width: 85%;
   }
   #projects .project-desc {
-  transform: translateX(0);
-
+    transform: translateX(0);
   }
-#projects .project > a {
-  transform: translateX(0);
-}
+  #projects .project > a {
+    transform: translateX(0);
+  }
 }
 @media screen and (max-width: 550px) {
   .project-pics {

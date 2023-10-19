@@ -197,51 +197,69 @@
         <!-- END OF PROJECT SECTION -->
 
         <!-- ============= CONTANCT ME SECTION ============ -->
+        <!-- <form
+          action="https://formsubmit.co/e5637c4d2a7d9c23c2177a6133223bc5"
+          method="POST"
+        >
+          <input type="text" name="username" />
+          <input type="text" name="email" />
+          <input type="hidden" name="_captcha" value="false" id="yes" />
+          <input
+            type="hidden"
+            name="_next"
+            value="thankYouPage.html"
+          />
+          <input type="submit" value="submit" />
+        </form> -->
+
+        <!-- <form 
+        action="https://formsubmit.co/e5637c4d2a7d9c23c2177a6133223bc5"
+        method="POST">
+      <input type="text" name="name">
+      <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://narges-danesh.github.io/bookSite/index.html"
+            />
+      <input type="submit" value="submit">
+    </form> -->
         <div id="contact-me" class="section">
-          <form action="" id="contact-me-form">
+          <form
+            action="https://formsubmit.co/e5637c4d2a7d9c23c2177a6133223bc5"
+            method="POST"
+            id="contact-me-form"
+          >
             <div id="form-header">
               <h1>تماس با من</h1>
               <span></span>
             </div>
             <div class="input-container">
-              <input
-                type="text"
-                name="username"
-                id="contact-me-username"
-                placeholder="نام و نام خانوادگی"
-              />
-              <span class="asterisk">*</span>
-              <small></small>
+              <label for="contact-me-username"
+                >نام و نام خانوادگی <span>*</span></label
+              >
+              <input type="text" name="username" id="contact-me-username" />
             </div>
             <div class="input-container">
-              <input
-                type="text"
-                name="email"
-                id="contact-me-email"
-                placeholder="آدرس ایمیل"
-              />
-              <span class="asterisk">*</span>
-              <small></small>
-            </div>
-            <div class="input-container">
-              <input
-                type="text"
-                name="text"
-                id="contact-me-website"
-                placeholder="آدرس سایت"
-              />
+              <label for="contact-me-email">آدرس ایمیل <span>*</span></label>
+              <input type="text" name="email" id="contact-me-email" />
             </div>
 
             <div class="input-container">
-              <textarea
-                name="userinput"
-                id="contact-me-userinput"
-                placeholder="درخواست یا پیشنهاد خود را بنویسید"
-              ></textarea>
-              <span class="asterisk">*</span>
-              <small></small>
+              <label for="contact-me-website">آدرس وبسایت (اختیاری)</label>
+              <input type="text" name="website" id="contact-me-website" />
             </div>
-            <input type="submit" value="ارسال ایمیل" id="contact-me-submit" />
+
+            <div class="input-container">
+              <label for="contact-me-userinput">پیام شما <span>*</span></label>
+              <textarea name="userinput" id="contact-me-userinput"></textarea>
+            </div>
+            <div id="submit-message">از همکاری شما سپاسگزارم 💐</div>
+
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="thankYouPage.html" />
+
+            <input type="submit" value="ارسال پیام" id="contact-me-submit" />
           </form>
         </div>
         <!-- END OF CONTACT ME SECTION -->
