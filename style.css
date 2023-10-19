@@ -403,6 +403,9 @@ nav {
   font-size: 0.9rem;
   color: #ddd;
 }
+#contact-me-form .input-container label span {
+  color: red;
+}
 #contact-me-form #contact-me-userinput {
   resize: none;
   height: 200px;
