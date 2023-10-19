@@ -116,13 +116,7 @@ function generalSkills() {
     70,
     "hotpink"
   );
-  // Excel
-  progressFunction(
-    generalProgressBars[3],
-    generalProgressValues[3],
-    70,
-    "#FF7F7F"
-  );
+ 
 }
 let scrolled = false;
 const skillsRect = skills.getBoundingClientRect();
