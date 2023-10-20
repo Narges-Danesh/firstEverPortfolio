@@ -147,6 +147,7 @@ nav {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  align-items: flex-start;
   padding-right: 10%;
   width: 35%;
 }
@@ -165,6 +166,23 @@ nav {
   color: #1a2722;
   width: max-content;
   border-radius: 3px;
+}
+#dl-resume {
+  background-color: rgb(235, 17, 17);
+  border-radius: 3px;
+  border: 1px solid rgb(235, 17, 17);
+  padding: 8px 15px;
+  transition: all 0.3s;
+}
+#dl-resume:hover {
+  background-color: transparent;
+  border: 1px solid rgb(235, 17, 17);
+}
+#dl-resume span {
+  margin-left: 8px;
+}
+#dl-resume i {
+  font-size: 1.2rem;
 }
 /* ====================== SKILLS ======================= */
 #skills {
@@ -559,7 +577,7 @@ nav {
     margin: 0 auto;
   }
   #hero-section {
-    height: 50vh;
+    height: 60vh;
   }
   #projects .project-pics img {
     width: 100%;
